@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import { config } from "./config";
 import { ExceptionsHandler } from "./middlewares/exception.handler";
 import { UnknownRoutesHandler } from "./middlewares/unknownRoutes.handler";
@@ -10,7 +11,7 @@ const app = express();
 
 const port = 5000;
 
-app.get("/", (req: any, res: any) => {
+app.get("/", (req: Request, res: Response) => {
   res.json({ recettes: ["RecipeOne", "RecipeTwo", "RecipeThree"] });
 });
 
