@@ -9,7 +9,7 @@ import {
 
 const qb = new MarmitonQueryBuilder();
 
-export async function getAllRecipes(req: Request, res: Response) {
+export async function getFewRecipes(req: Request, res: Response) {
   const query = qb
     .withTitleContaining("soja")
     .withoutOven()
