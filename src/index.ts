@@ -10,7 +10,7 @@ const express = require("express");
 // Use express to our application
 const app = express();
 
-app.get("/", getFewRecipes);
+app.get("/api", getFewRecipes);
 
 // Retourne une erreur pour les routes non définies
 app.all("*", UnknownRoutesHandler);

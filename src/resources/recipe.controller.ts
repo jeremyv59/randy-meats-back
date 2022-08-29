@@ -10,6 +10,7 @@ import {
 const qb = new MarmitonQueryBuilder();
 
 export async function getFewRecipes(req: Request, res: Response) {
+  res.header("Access-Control-Allow-Origin", "*");
   const query = qb
     .withTitleContaining("soja")
     .withoutOven()
