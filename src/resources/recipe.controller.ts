@@ -20,6 +20,6 @@ export async function getFewRecipes(req: Request, res: Response) {
     .build();
 
   // Fetch the recipes
-  const recipes: Recipe[] = await searchRecipes(query, { limit: 3 });
+  const recipes: Recipe[] = await searchRecipes(query, { limit: 12 });
   res.json({ recipes });
 }
