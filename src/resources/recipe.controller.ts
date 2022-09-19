@@ -12,7 +12,7 @@ const qb = new MarmitonQueryBuilder();
 export async function getFewRecipes(req: Request, res: Response) {
   res.header("Access-Control-Allow-Origin", "*");
   const query = qb
-    .withTitleContaining("soja")
+    .withTitleContaining("avocat")
     .withoutOven()
     .withPrice(RECIPE_PRICE.CHEAP)
     .takingLessThan(45)
@@ -20,6 +20,6 @@ export async function getFewRecipes(req: Request, res: Response) {
     .build();
 
   // Fetch the recipes
-  const recipes: Recipe[] = await searchRecipes(query);
+  const recipes: Recipe[] = await searchRecipes(query, { limit: 3 });
   res.json({ recipes });
 }
